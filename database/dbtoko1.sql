@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2023 at 02:42 PM
+-- Generation Time: May 09, 2023 at 12:27 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -106,7 +106,8 @@ INSERT INTO `jenis_produk` (`id`, `nama`, `ket`) VALUES
 (2, 'Makanan', 'Tersedia'),
 (3, 'Minuman', 'Tidak Tersedia'),
 (4, 'Furniture', 'Tersedia'),
-(5, 'Alat kebersihan', 'Tersedia');
+(5, 'Alat kebersihan', 'Tersedia'),
+(6, 'Perabot', 'Tersedia');
 
 -- --------------------------------------------------------
 
@@ -129,7 +130,8 @@ CREATE TABLE `kartu` (
 INSERT INTO `kartu` (`id`, `kode`, `nama`, `diskon`, `iuran`) VALUES
 (1, '10111', 'Gold', 20000, 2000),
 (2, '10112', 'Silver', 15000, 1500),
-(4, '10113', 'Perak', 10000, 1000);
+(4, '10113', 'Perak', 10000, 1000),
+(5, '10114', 'Platinum', 25000, 3000);
 
 -- --------------------------------------------------------
 
@@ -159,7 +161,8 @@ INSERT INTO `pelanggan` (`id`, `kode`, `nama_pelanggan`, `jk`, `tmp_lahir`, `tgl
 (4, '011104', 'Suandi', 'L', 'Jakarta', '1997-09-08', 'suandi@gmail.com', 1),
 (5, '011105', 'Pradana', 'L', 'Jakarta', '2001-08-01', 'pradana@gmail.com', 2),
 (6, '011106', 'Gayatri Putri', 'P', 'Jakarta', '2002-09-01', 'gayatri@gmail.com', 1),
-(7, '011107', 'Cakra', 'L', 'Depok', '1999-05-08', 'cakra@gmail.com', 1);
+(7, '011107', 'Cakra', 'L', 'Depok', '1999-05-08', 'cakra@gmail.com', 1),
+(8, '011108', 'Ririn', 'P', 'Bandung', '1998-08-28', 'ririn@gmail.com', 4);
 
 -- --------------------------------------------------------
 
@@ -235,7 +238,8 @@ INSERT INTO `pesanan` (`id`, `tanggal`, `total`, `pelanggan_id`) VALUES
 (3, '2022-02-02', 30000, 1),
 (4, '2023-05-05', 3000000, 4),
 (5, '2023-05-05', 2000000, 2),
-(6, '2023-05-06', 4000000, 5);
+(6, '2023-05-06', 4000000, 5),
+(7, '2023-05-09', 2000000, 3);
 
 -- --------------------------------------------------------
 
@@ -343,7 +347,9 @@ INSERT INTO `produk` (`id`, `kode`, `nama`, `harga_beli`, `harga_jual`, `stok`, 
 (3, 'K001', 'Kulkas', 4000000, 5000000, 8, 3, 1),
 (4, 'M001', 'Meja Makan', 1000000, 2000000, 4, 2, 4),
 (5, 'T001', 'Taro', 4000, 5000, 3, 2, 2),
-(7, 'A001', 'AC', 2000000, 3000000, 7, 2, 1);
+(7, 'A001', 'AC', 2000000, 3000000, 7, 2, 1),
+(8, 'TP01', 'Teh Pucuk', 10000, 5000, 10, 2, 3),
+(9, 'R001', 'Radio', 1500000, 1000000, 10, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -468,19 +474,19 @@ ALTER TABLE `vendor`
 -- AUTO_INCREMENT for table `jenis_produk`
 --
 ALTER TABLE `jenis_produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `kartu`
 --
 ALTER TABLE `kartu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`
@@ -498,7 +504,7 @@ ALTER TABLE `pembelian`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `pesanan_items`
@@ -510,7 +516,7 @@ ALTER TABLE `pesanan_items`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `vendor`
