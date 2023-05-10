@@ -4,13 +4,32 @@ $model = new Produk();
 $produk = $model->getProduk($id);
 ?>
 
-<div>
-    <br>
-    <h4>Kode : <?= $produk['kode'] ?></h4>
-    <h4>Nama : <?= $produk['nama'] ?></h4>
-    <h4>Harga Beli : <?= $produk['harga_beli'] ?></h4>
-    <h4>Harga Jual : <?= $produk['harga_jual'] ?></h4>
-    <h4>Stok : <?= $produk['stok'] ?></h4>
-    <h4>Minimal Stok : <?= $produk['min_stok'] ?></h4>
-    <h4>Jenis Produk ID : <?= $produk['jenis_produk_id'] ?></h4>
+<h1 class="mt-4">Detail Produk</h1>
+<div class="card-body">
+    <div class="card mb-4">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Nama</th>
+                        <th>Harga Beli</th>
+                        <th>Harga Jual</th>
+                        <th>Stok</th>
+                        <th>Minimal Stok</th>
+                        <th>Jenis Produk</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?= $produk['kode']?></td>
+                        <td><?= $produk['nama']?></td>
+                        <td><?= $produk['harga_beli']?></td>
+                        <td><?= $produk['harga_jual']?></td>
+                        <td><?= $produk['stok']?></td>
+                        <td><?= $produk['min_stok']?></td>
+                        <td><?= $produk['Kategori']?></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
 </div>

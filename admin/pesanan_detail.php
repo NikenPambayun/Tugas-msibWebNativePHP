@@ -4,9 +4,24 @@ $model = new Pesanan();
 $pesanan = $model->getPesanan($id);
 ?>
 
-<div>
-    <br>
-    <h4>Tanggal : <?= $pesanan['tanggal'] ?></h4>
-    <h4>Total : <?= $pesanan['total'] ?></h4>
-    <h4>Pelanggan ID :<?= $pesanan['pelanggan_id'] ?></h4>
+<h1 class="mt-4">Detail Pesanan</h1>
+<div class="card-body">
+    <div class="card mb-4">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Total</th>
+                        <th>Pelanggan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?= $pesanan['tanggal']?></td>
+                        <td><?= $pesanan['total']?></td>
+                        <td><?= $pesanan['pelanggan']?></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
 </div>

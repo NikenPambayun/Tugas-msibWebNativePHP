@@ -4,13 +4,32 @@ $model = new Pelanggan();
 $pelanggan = $model->getPelanggan($id);
 ?>
 
-<div>
-    <br>
-    <h4>Kode : <?= $pelanggan['kode'] ?></h4>
-    <h4>Nama Pelanggan : <?= $pelanggan['nama_pelanggan'] ?></h4>
-    <h4>Jenis Kelamin : <?= $pelanggan['jk'] ?></h4>
-    <h4>Tempat Lahir : <?= $pelanggan['tmp_lahir'] ?></h4>
-    <h4>Tanggal Lahir : <?= $pelanggan['tgl_lahir'] ?></h4>
-    <h4>Email : <?= $pelanggan['email'] ?></h4>
-    <h4>Kartu ID : <?= $pelanggan['kartu_id'] ?></h4>
+<h1 class="mt-4">Detail Produk</h1>
+<div class="card-body">
+    <div class="card mb-4">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tempat Lahir</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Email</th>
+                        <th>Kartu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?= $pelanggan['kode']?></td>
+                        <td><?= $pelanggan['nama']?></td>
+                        <td><?= $pelanggan['jk']?></td>
+                        <td><?= $pelanggan['tmp_lahir']?></td>
+                        <td><?= $pelanggan['tgl_lahir']?></td>
+                        <td><?= $pelanggan['email']?></td>
+                        <td><?= $pelanggan['kartu']?></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
 </div>
